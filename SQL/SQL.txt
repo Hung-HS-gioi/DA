@@ -1,0 +1,81 @@
+SELECT * FROM TABLE
+
+SELECT DISTINCT column*
+FROM table
+
+lấy theo điều kiện
+SELECT column*
+FROM table
+WHERE ĐK
+
+xắp xếp theo
+SELECT column*
+FROM table
+ORDER BY column
+
+chèn thêm vào bảng
+INSERT INTO table(columl,columl1),
+VALUES('gt1','gt2')
+
+có giá trị null không
+SELECT * FROM table
+WHERE column IS NULL;
+WHERE column IS NOT NULL;
+
+cập nhật bảng
+UPDATE table
+SET column1="gt"
+WHERE ĐK
+
+xóa cột 
+DELETE FROM table WHERE column = 'gia tri';
+
+lấy min
+SELECT MIN(column) FROM table
+
+tính Số lượng
+SELECT COUNT(ProductID)   ## AVG,SUM
+FROM Products;
+
+tìm giá trị 
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a%';  # '%a', '%ô%', 'L_n_on', '[!bsp]%, '[bsp]%'
+
+Lấy toàn bộ giá trị
+SELECT * FROM table
+WHERE column IN ('Germany', 'France', 'UK');
+WHERE column NOT IN ('Germany', 'France', 'UK');
+
+Lấy trong khoảng 
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20
+
+as tên
+SELECT CustomerID AS ID
+FROM Customers;
+
+lấy theo  # INNER JOIN ,LEFT JOIN  , RIGHT JOIN , FULL JOIN 
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+đến theo 
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+
+SQL DATABASE
+CREATE DATABASE databasename;
+
+DROP DATABASE databasename;
+
+Tạo data với file local
+BACKUP DATABASE testDB
+TO DISK = 'D:\backups\testDB.bak';
+
+
